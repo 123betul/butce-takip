@@ -1,0 +1,117 @@
+.form-card {
+    border-radius: 20px !important;
+    animation: fadeInUp 0.5s ease-out both;
+}
+
+.form-header-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--gradient-primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: white;
+}
+
+/* Custom Input Group */
+.custom-input-group {
+    border-radius: 12px !important;
+    overflow: hidden;
+}
+
+.custom-input-icon {
+    background: rgba(99, 102, 241, 0.1) !important;
+    border-color: var(--border-color) !important;
+    color: var(--accent-primary) !important;
+    font-size: 0.85rem;
+}
+
+.custom-input-group .form-control {
+    border-radius: 0 12px 12px 0 !important;
+}
+
+/* Type Selector Toggle */
+.type-selector {
+    display: flex;
+    gap: 8px;
+}
+
+.type-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 14px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: rgba(15, 23, 42, 0.6);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.type-btn:hover {
+    border-color: var(--border-hover);
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.type-income.active {
+    background: var(--income-bg);
+    border-color: var(--income-border);
+    color: var(--income-color);
+    box-shadow: 0 0 15px rgba(52, 211, 153, 0.15);
+}
+
+.type-expense.active {
+    background: var(--expense-bg);
+    border-color: var(--expense-border);
+    color: var(--expense-color);
+    box-shadow: 0 0 15px rgba(248, 113, 113, 0.15);
+}
+
+/* Submit Button */
+.btn-submit {
+    padding: 14px 24px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.3px;
+    border: none;
+    border-radius: 14px !important;
+    background: var(--gradient-primary) !important;
+    background-size: 200% 200%;
+    color: white !important;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.35);
+    animation: gradientFlow 2s ease-in-out infinite;
+}
+
+.btn-submit:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .type-selector {
+        margin-top: 0;
+    }
+    .type-btn {
+        font-size: 0.8rem;
+        padding: 10px 10px;
+    }
+}

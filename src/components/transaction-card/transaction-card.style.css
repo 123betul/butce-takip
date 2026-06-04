@@ -1,0 +1,143 @@
+.transaction-card {
+    border-radius: 16px !important;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.4s ease-out both;
+}
+
+.transaction-card:hover {
+    transform: translateX(4px);
+    border-color: var(--border-hover) !important;
+    box-shadow: var(--shadow-sm);
+}
+
+.transaction-card.deleting {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Sol Kenar Çizgisi */
+.card-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+}
+
+.indicator-income {
+    background: var(--gradient-income);
+}
+
+.indicator-expense {
+    background: var(--gradient-expense);
+}
+
+/* Tür İkonu */
+.card-type-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.icon-income {
+    background: var(--income-bg);
+    color: var(--income-color);
+}
+
+.icon-expense {
+    background: var(--expense-bg);
+    color: var(--expense-color);
+}
+
+/* İşlem Bilgisi */
+.transaction-info {
+    min-width: 0;
+}
+
+.type-badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.badge-income {
+    background: var(--income-bg) !important;
+    color: var(--income-color) !important;
+    border: 1px solid var(--income-border);
+}
+
+.badge-expense {
+    background: var(--expense-bg) !important;
+    color: var(--expense-color) !important;
+    border: 1px solid var(--expense-border);
+}
+
+.transaction-desc {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+
+/* Tutar */
+.transaction-amount {
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+/* Silme Butonu */
+.btn-delete {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px !important;
+    border: 1px solid transparent !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    color: var(--text-muted) !important;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    transition: all 0.25s ease;
+}
+
+.btn-delete:hover:not(:disabled) {
+    background: var(--expense-bg) !important;
+    border-color: var(--expense-border) !important;
+    color: var(--expense-color) !important;
+    transform: scale(1.1);
+}
+
+.btn-delete:disabled {
+    opacity: 0.5;
+}
+
+@media (max-width: 576px) {
+    .transaction-card .card-body > div {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+    .transaction-card .card-body > div > div:last-child {
+        width: 100%;
+        justify-content: space-between !important;
+        margin-left: 0 !important;
+    }
+    .transaction-desc {
+        max-width: 200px;
+    }
+}
